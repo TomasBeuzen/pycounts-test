@@ -31,7 +31,8 @@ def test_plot_words(einstein_counts):
         ["list", "of", "words"]
     ]
 )
-def test_plot_words_error(obj):
+def test_plot_words_raises():
+    """Check TypeError raised when Counter not used."""
     with pytest.raises(TypeError):
         plot_words(obj)
 
