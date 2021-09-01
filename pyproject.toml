@@ -20,7 +20,16 @@ sphinx-rtd-theme = "^0.5.2"
 python-semantic-release = "^7.19.1"
 
 [tool.semantic_release]
+# where to update version number
 version_variable = "pyproject.toml:version"
+# branch to make releases from
+branch = "main"
+# changelog file
+changelog_file = "CHANGELOG.md"
+# commands to build sdist and wheel
+build_command = "pip install poetry && poetry build"
+# don't auto-upload to PyPI (we'll do this later)
+upload_to_pypi = false
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
