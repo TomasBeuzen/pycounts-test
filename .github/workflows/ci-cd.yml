@@ -21,15 +21,13 @@ jobs:
       uses: actions/checkout@v2
     # Step 4. Install poetry
       uses: snok/install-poetry@v1
-      with:
-        version: 1.2.0a2
     # Step 5. Install our pycounts package
     - name: Install package
       run: poetry install
     # Step 6. Run tests for pycounts
     - name: Test with pytest
       run: poetry run pytest --cov=pycounts --cov-report=xml
-    # Step 7. Upload code coverage to Codecov
+    # Step 7. Use Codecov to track coverage
       uses: codecov/codecov-action@v2
       with:
         file: ./coverage.xml
